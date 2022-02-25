@@ -4,9 +4,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
         run:  sh ./build.sh
       - name: Pushes to another repository
         id: push_directory
-        uses: thanhinterpol/test01@main
+        uses: thanhinterpol/test01@dev
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
